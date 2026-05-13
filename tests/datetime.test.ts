@@ -90,8 +90,9 @@ describe("formatTimeRemainingFromEpochMs", () => {
     expect(result).toBe("0h 0m 0s")
   })
 
-  it("should return '0s' for exactly now", () => {
-    const now = Temporal.Now.instant().epochMilliseconds
+  it("should return '0s' for near-zero remaining time", () => {
+    // Use a small buffer (200ms in the future) to avoid race conditions on CI
+    const now = Temporal.Now.instant().epochMilliseconds + 200
 
     const result = formatTimeRemainingFromEpochMs(now)
 
