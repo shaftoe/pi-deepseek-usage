@@ -2,6 +2,8 @@
 
 A [Pi coding agent](https://pi.dev/) extension that monitors your [DeepSeek](https://platform.deepseek.com/) API account balance and automatically displays it in the footer when using a DeepSeek provider.
 
+![screenshot](screenshot.png)
+
 ## Features
 
 - **Auto Footer Display**: Shows remaining account balance when using DeepSeek models
