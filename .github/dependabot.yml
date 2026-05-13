@@ -1,0 +1,9 @@
+version: 2
+updates:
+  # Regular dependency updates (weekly)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
