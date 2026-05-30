@@ -1,8 +1,9 @@
 /**
  * DeepSeek Usage Checker - Pi Extension
- * API interaction functions
+ * API interaction functions using pi-usage-lib utilities
  */
 
+import { buildAuthHeaders, safeFetch, safeParseJson } from "@alexanderfortin/pi-usage-lib"
 import type { ModelRegistry } from "@earendil-works/pi-coding-agent"
 
 const DEEPSEEK_BALANCE_API_URL = "https://api.deepseek.com/user/balance"
@@ -35,24 +36,9 @@ export interface DeepSeekBalanceData {
 export async function getDeepSeekBalance(
   modelRegistry: Pick<ModelRegistry, "getApiKeyForProvider">,
 ): Promise<DeepSeekBalanceData> {
-  const apiKey = await modelRegistry.getApiKeyForProvider("deepseek")
-  if (!apiKey) {
-    throw new Error(
-      "Missing DeepSeek API credentials. Set DEEPSEEK_API_KEY or configure the deepseek provider.",
-    )
-  }
-
-  const response = await fetch(DEEPSEEK_BALANCE_API_URL, {
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-    },
-  })
-
-  if (!response.ok) {
-    throw new Error(`API request failed with status ${response.status}`)
-  }
-
-  const data = (await response.json()) as DeepSeekBalanceResponse
+  const headers = await buildAuthHeaders(modelRegistry, "deepseek")
+  const response = await safeFetch(DEEPSEEK_BALANCE_API_URL, { headers })
+  const data = await safeParseJson<DeepSeekBalanceResponse>(response)
 
   return {
     isAvailable: data.is_available,

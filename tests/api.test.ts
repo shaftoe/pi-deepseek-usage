@@ -3,6 +3,7 @@
  */
 
 import { afterEach, beforeEach, describe, expect, it, mock } from "bun:test"
+import { UsageError } from "@alexanderfortin/pi-usage-lib"
 import { type DeepSeekBalanceResponse, getDeepSeekBalance } from "../src/api"
 
 describe("getDeepSeekBalance", () => {
@@ -40,23 +41,7 @@ describe("getDeepSeekBalance", () => {
     mockFetch.mockRestore()
   })
 
-  it("should throw an error when API key is missing", async () => {
-    mockModelRegistry.getApiKeyForProvider = async () => null
-
-    expect(getDeepSeekBalance(mockModelRegistry)).rejects.toThrow(
-      "Missing DeepSeek API credentials",
-    )
-  })
-
-  it("should throw an error when API key is empty string", async () => {
-    mockModelRegistry.getApiKeyForProvider = async () => ""
-
-    expect(getDeepSeekBalance(mockModelRegistry)).rejects.toThrow(
-      "Missing DeepSeek API credentials",
-    )
-  })
-
-  it("should throw an error when API request fails with 401", async () => {
+  it("should throw UsageError with code http401 when API returns 401", async () => {
     mockFetch.mockImplementationOnce(() =>
       Promise.resolve({
         ok: false,
@@ -64,12 +49,17 @@ describe("getDeepSeekBalance", () => {
       } as Response),
     )
 
-    expect(getDeepSeekBalance(mockModelRegistry)).rejects.toThrow(
-      "API request failed with status 401",
-    )
+    try {
+      await getDeepSeekBalance(mockModelRegistry)
+      expect.unreachable("Should have thrown")
+    } catch (e) {
+      expect(e).toBeInstanceOf(UsageError)
+      expect((e as UsageError).code).toBe("http401")
+      expect((e as UsageError).message).toContain("401")
+    }
   })
 
-  it("should throw an error when API returns 500", async () => {
+  it("should throw UsageError with code http500 when API returns 500", async () => {
     mockFetch.mockImplementationOnce(() =>
       Promise.resolve({
         ok: false,
@@ -77,9 +67,46 @@ describe("getDeepSeekBalance", () => {
       } as Response),
     )
 
-    expect(getDeepSeekBalance(mockModelRegistry)).rejects.toThrow(
-      "API request failed with status 500",
+    try {
+      await getDeepSeekBalance(mockModelRegistry)
+      expect.unreachable("Should have thrown")
+    } catch (e) {
+      expect(e).toBeInstanceOf(UsageError)
+      expect((e as UsageError).code).toBe("http500")
+    }
+  })
+
+  it("should throw UsageError with code fetch on network error", async () => {
+    mockFetch.mockImplementationOnce(() => {
+      throw new TypeError("Failed to fetch")
+    })
+
+    try {
+      await getDeepSeekBalance(mockModelRegistry)
+      expect.unreachable("Should have thrown")
+    } catch (e) {
+      expect(e).toBeInstanceOf(UsageError)
+      expect((e as UsageError).code).toBe("fetch")
+    }
+  })
+
+  it("should throw UsageError with code badjson on malformed JSON", async () => {
+    mockFetch.mockImplementationOnce(() =>
+      Promise.resolve({
+        ok: true,
+        json: async () => {
+          throw new SyntaxError("Unexpected token")
+        },
+      } as unknown as Response),
     )
+
+    try {
+      await getDeepSeekBalance(mockModelRegistry)
+      expect.unreachable("Should have thrown")
+    } catch (e) {
+      expect(e).toBeInstanceOf(UsageError)
+      expect((e as UsageError).code).toBe("badjson")
+    }
   })
 
   it("should return balance data with USD currency", async () => {
@@ -190,7 +217,7 @@ describe("getDeepSeekBalance", () => {
     expect(result.balances).toHaveLength(0)
   })
 
-  it("should make request to correct API endpoint", async () => {
+  it("should make request to correct API endpoint with auth headers", async () => {
     const mockResponse: DeepSeekBalanceResponse = {
       is_available: true,
       balance_infos: [
@@ -204,11 +231,11 @@ describe("getDeepSeekBalance", () => {
     }
 
     let fetchUrl: string | undefined
-    let fetchHeaders: any
+    let fetchOptions: RequestInit | undefined
 
     mockFetch.mockImplementationOnce((url: string, options: RequestInit) => {
       fetchUrl = url
-      fetchHeaders = options.headers
+      fetchOptions = options
       return Promise.resolve({
         ok: true,
         json: async () => mockResponse,
@@ -218,9 +245,11 @@ describe("getDeepSeekBalance", () => {
     await getDeepSeekBalance(mockModelRegistry)
 
     expect(fetchUrl).toBe("https://api.deepseek.com/user/balance")
-    expect(fetchHeaders).toBeDefined()
-    const headers = fetchHeaders as Record<string, string>
+    expect(fetchOptions).toBeDefined()
+    const headers = fetchOptions?.headers as Record<string, string>
     expect(headers.Authorization).toBe("Bearer test-api-key")
+    // Should include Accept-Encoding: identity (from buildAuthHeaders)
+    expect(headers["Accept-Encoding"]).toBe("identity")
   })
 
   it("should use the provided API key from model registry", async () => {
@@ -239,10 +268,10 @@ describe("getDeepSeekBalance", () => {
       ],
     }
 
-    let fetchHeaders: any
+    let fetchOptions: RequestInit | undefined
 
     mockFetch.mockImplementationOnce((_url: string, options: RequestInit) => {
-      fetchHeaders = options.headers
+      fetchOptions = options
       return Promise.resolve({
         ok: true,
         json: async () => mockResponse,
@@ -251,8 +280,56 @@ describe("getDeepSeekBalance", () => {
 
     await getDeepSeekBalance(mockModelRegistry)
 
-    const headers = fetchHeaders as Record<string, string>
+    const headers = fetchOptions?.headers as Record<string, string>
     expect(headers.Authorization).toBe(`Bearer ${customApiKey}`)
+  })
+
+  it("should not include Authorization header when API key is missing", async () => {
+    mockModelRegistry.getApiKeyForProvider = async () => null
+
+    const mockResponse: DeepSeekBalanceResponse = {
+      is_available: true,
+      balance_infos: [],
+    }
+
+    let fetchOptions: RequestInit | undefined
+
+    mockFetch.mockImplementationOnce((_url: string, options: RequestInit) => {
+      fetchOptions = options
+      return Promise.resolve({
+        ok: true,
+        json: async () => mockResponse,
+      } as Response)
+    })
+
+    await getDeepSeekBalance(mockModelRegistry)
+
+    const headers = fetchOptions?.headers as Record<string, string>
+    expect(headers.Authorization).toBeUndefined()
+  })
+
+  it("should not include Authorization header when API key is proxy-managed sentinel", async () => {
+    mockModelRegistry.getApiKeyForProvider = async () => "proxy-managed"
+
+    const mockResponse: DeepSeekBalanceResponse = {
+      is_available: true,
+      balance_infos: [],
+    }
+
+    let fetchOptions: RequestInit | undefined
+
+    mockFetch.mockImplementationOnce((_url: string, options: RequestInit) => {
+      fetchOptions = options
+      return Promise.resolve({
+        ok: true,
+        json: async () => mockResponse,
+      } as Response)
+    })
+
+    await getDeepSeekBalance(mockModelRegistry)
+
+    const headers = fetchOptions?.headers as Record<string, string>
+    expect(headers.Authorization).toBeUndefined()
   })
 
   it("should map snake_case fields to camelCase", async () => {
