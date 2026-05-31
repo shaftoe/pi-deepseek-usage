@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@alexanderfortin/pi-usage-lib": "^0.0.1",
-    "@earendil-works/pi-coding-agent": "0.77.0",
+    "@earendil-works/pi-coding-agent": "0.78.0",
     "@sinclair/typebox": "0.34.49",
     "temporal-polyfill": "0.3.2"
   },
