@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.3] - 2026-06-15
+
+### Changed
+
+- **deps-ci**: bump codecov/codecov-action from 6 to 7 (#15)
+- **deps**: bump Pi deps
+- **deps-dev**: update dependencies (#14)
+- **deps**: update dependencies (#16)
+
 ## [0.2.2] - 2026-06-05
 
 ### Changed
@@ -54,6 +63,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - bump release
 
+[0.2.3]: https://github.com/shaftoe/pi-deepseek-usage/compare/v0.2.2...v0.2.3
 [0.2.2]: https://github.com/shaftoe/pi-deepseek-usage/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/shaftoe/pi-deepseek-usage/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/shaftoe/pi-deepseek-usage/compare/v0.1.4...v0.2.0
