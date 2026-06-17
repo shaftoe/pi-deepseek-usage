@@ -4,6 +4,7 @@
  */
 
 import type { Theme } from "@alexanderfortin/pi-usage-lib"
+import { colorForCredit } from "@alexanderfortin/pi-usage-lib"
 import type { DeepSeekBalanceData } from "./api"
 
 /** Resolve the preferred balance entry from the response (USD first, then first available) */
@@ -34,6 +35,8 @@ export function renderDeepSeekStatus(data: DeepSeekBalanceData, theme: Theme): s
     return theme.fg("muted", "DeepSeek:") + theme.fg("accent", "No balance")
   }
 
+  const colored = colorForCredit(parseFloat(balance.totalBalance), theme)
   const displayBalance = formatMoney(parseFloat(balance.totalBalance), balance.currency)
-  return theme.fg("muted", "DeepSeek:") + theme.fg("accent", displayBalance)
+
+  return theme.fg("muted", "DeepSeek:") + colored(displayBalance)
 }

@@ -192,4 +192,104 @@ describe("renderDeepSeekStatus", () => {
     expect(result).toContain("muted:")
     expect(result).toContain("accent:")
   })
+
+  // --- Credit threshold coloring ---
+  // colorForCredit thresholds: error when credit <= $1,
+  // warning when $1 < credit < $2, accent when credit >= $2.
+
+  it("should render accent color at the $2 threshold", () => {
+    const data: DeepSeekBalanceData = {
+      isAvailable: true,
+      balances: [
+        {
+          currency: "USD",
+          totalBalance: "2.00",
+          grantedBalance: "0.00",
+          toppedUpBalance: "2.00",
+        },
+      ],
+    }
+    const result = renderDeepSeekStatus(data, mockTheme as any)
+    expect(result).toBe("muted:DeepSeek:accent:$2.00")
+  })
+
+  it("should render warning color when credit is between $1 and $2", () => {
+    const data: DeepSeekBalanceData = {
+      isAvailable: true,
+      balances: [
+        {
+          currency: "USD",
+          totalBalance: "1.50",
+          grantedBalance: "0.00",
+          toppedUpBalance: "1.50",
+        },
+      ],
+    }
+    const result = renderDeepSeekStatus(data, mockTheme as any)
+    expect(result).toBe("muted:DeepSeek:warning:$1.50")
+  })
+
+  it("should render warning color just above the $1 threshold", () => {
+    const data: DeepSeekBalanceData = {
+      isAvailable: true,
+      balances: [
+        {
+          currency: "USD",
+          totalBalance: "1.01",
+          grantedBalance: "0.00",
+          toppedUpBalance: "1.01",
+        },
+      ],
+    }
+    const result = renderDeepSeekStatus(data, mockTheme as any)
+    expect(result).toBe("muted:DeepSeek:warning:$1.01")
+  })
+
+  it("should render error color when credit is at the $1 threshold", () => {
+    const data: DeepSeekBalanceData = {
+      isAvailable: true,
+      balances: [
+        {
+          currency: "USD",
+          totalBalance: "1.00",
+          grantedBalance: "0.00",
+          toppedUpBalance: "1.00",
+        },
+      ],
+    }
+    const result = renderDeepSeekStatus(data, mockTheme as any)
+    expect(result).toBe("muted:DeepSeek:error:$1.00")
+  })
+
+  it("should render error color for very low balance", () => {
+    const data: DeepSeekBalanceData = {
+      isAvailable: true,
+      balances: [
+        {
+          currency: "USD",
+          totalBalance: "0.25",
+          grantedBalance: "0.00",
+          toppedUpBalance: "0.25",
+        },
+      ],
+    }
+    const result = renderDeepSeekStatus(data, mockTheme as any)
+    expect(result).toBe("muted:DeepSeek:error:$0.25")
+  })
+
+  it("should apply threshold coloring to non-USD currencies", () => {
+    const data: DeepSeekBalanceData = {
+      isAvailable: true,
+      balances: [
+        {
+          currency: "CNY",
+          totalBalance: "1.50",
+          grantedBalance: "0.00",
+          toppedUpBalance: "1.50",
+        },
+      ],
+    }
+    const result = renderDeepSeekStatus(data, mockTheme as any)
+    expect(result).toBe("muted:DeepSeek:warning:¥1.50")
+  })
 })
