@@ -1,6 +1,6 @@
 {
   "name": "@alexanderfortin/pi-deepseek-usage",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Pi extension for monitoring DeepSeek API balance",
   "type": "module",
   "main": "./dist/index.js",
