@@ -9,7 +9,7 @@
         "temporal-polyfill": "^1.0.1",
       },
       "devDependencies": {
-        "@alexanderfortin/semantic-release-keep-a-changelog": "^0.4.2",
+        "@alexanderfortin/semantic-release-keep-a-changelog": "^0.4.3",
         "@biomejs/biome": "^2.5.0",
         "@semantic-release/commit-analyzer": "^13.0.1",
         "@semantic-release/exec": "^7.1.0",
@@ -21,8 +21,8 @@
         "typescript": "^6.0.3",
       },
       "peerDependencies": {
-        "@earendil-works/pi-coding-agent": "^0.79.7",
-        "@earendil-works/pi-tui": "^0.79.7",
+        "@earendil-works/pi-coding-agent": "^0.79.8",
+        "@earendil-works/pi-tui": "^0.79.8",
         "@sinclair/typebox": "^0.34.49",
       },
     },
@@ -38,7 +38,7 @@
 
     "@alexanderfortin/pi-usage-lib": ["@alexanderfortin/pi-usage-lib@0.2.0", "", { "dependencies": { "temporal-polyfill": "^0.3.2" }, "peerDependencies": { "@earendil-works/pi-coding-agent": "^0.79.6", "@earendil-works/pi-tui": "^0.79.6" } }, "sha512-YCAIAWQs72oLkWZ7u7dJ6RIf3If1iZhNAM5pdRPb1YFHYZbTH1e/LtbOTUeWwa8EoMhDUpSX3KQFIqMn1Q342w=="],
 
-    "@alexanderfortin/semantic-release-keep-a-changelog": ["@alexanderfortin/semantic-release-keep-a-changelog@0.4.2", "", { "dependencies": { "@semantic-release/error": "^4.0.0", "conventional-changelog-writer": "8.4.0", "conventional-commits-filter": "^5.0.0", "conventional-commits-parser": "6.4.0", "get-stream": "9.0.1", "into-stream": "^9.1.0", "temporal-polyfill": "^0.3.2" }, "peerDependencies": { "semantic-release": ">=24.0.0" } }, "sha512-OvzCfsLXOiPZRsPUbTL3zj4QKdKCYtrN8/YNC+9rana5+vdKDI2BHK5KhzdGr5f8hNbRE7RN2xzk5p9MsJR0iA=="],
+    "@alexanderfortin/semantic-release-keep-a-changelog": ["@alexanderfortin/semantic-release-keep-a-changelog@0.4.3", "", { "dependencies": { "@semantic-release/error": "^4.0.0", "conventional-changelog-writer": "8.4.0", "conventional-commits-filter": "^5.0.0", "conventional-commits-parser": "6.4.0", "get-stream": "9.0.1", "into-stream": "^9.1.0", "temporal-polyfill": "^1.0.1" }, "peerDependencies": { "semantic-release": ">=24.0.0" } }, "sha512-8UjgBughee0o8g/vU4r/QOrt5kZj4ICc6ZGOmxKrI+PMBOCgB4ya0qw6XW8gnhtKUf/2uakZyWUd5zZ0Cbx0kQ=="],
 
     "@anthropic-ai/sdk": ["@anthropic-ai/sdk@0.91.1", "", { "dependencies": { "json-schema-to-ts": "^3.1.1" }, "peerDependencies": { "zod": "^3.25.0 || ^4.0.0" }, "optionalPeers": ["zod"], "bin": { "anthropic-ai-sdk": "bin/cli" } }, "sha512-LAmu761tSN9r66ixvmciswUj/ZC+1Q4iAfpedTfSVLeswRwnY3n2Nb6Tsk+cLPP28aLOPWeMgIuTuCcMC6W/iw=="],
 
@@ -792,8 +792,6 @@
 
     "@alexanderfortin/pi-usage-lib/temporal-polyfill": ["temporal-polyfill@0.3.2", "", { "dependencies": { "temporal-spec": "0.3.1" } }, "sha512-TzHthD/heRK947GNiSu3Y5gSPpeUDH34+LESnfsq8bqpFhsB79HFBX8+Z834IVX68P3EUyRPZK5bL/1fh437Eg=="],
 
-    "@alexanderfortin/semantic-release-keep-a-changelog/temporal-polyfill": ["temporal-polyfill@0.3.2", "", { "dependencies": { "temporal-spec": "0.3.1" } }, "sha512-TzHthD/heRK947GNiSu3Y5gSPpeUDH34+LESnfsq8bqpFhsB79HFBX8+Z834IVX68P3EUyRPZK5bL/1fh437Eg=="],
-
     "@aws-sdk/core/@aws-sdk/types": ["@aws-sdk/types@3.973.9", "", { "dependencies": { "@smithy/types": "^4.14.2", "tslib": "^2.6.2" } }, "sha512-kuBfgQVdcz5Bmapc4A13YbpVw/pXkesfhetcFYwbntqas8sF41OHyd4o28+/TG2ZQdHBsv90Lsu5y6oitvYCdg=="],
 
     "@aws-sdk/credential-provider-env/@aws-sdk/types": ["@aws-sdk/types@3.973.9", "", { "dependencies": { "@smithy/types": "^4.14.2", "tslib": "^2.6.2" } }, "sha512-kuBfgQVdcz5Bmapc4A13YbpVw/pXkesfhetcFYwbntqas8sF41OHyd4o28+/TG2ZQdHBsv90Lsu5y6oitvYCdg=="],
@@ -1187,8 +1185,6 @@
     "wrap-ansi/ansi-styles": ["ansi-styles@6.2.3", "", {}, "sha512-4Dj6M28JB+oAH8kFkTLUo+a2jwOFkuqb3yucU0CANcRRUbxS0cP0nZYCGjcc3BNXwRIsUVmDGgzawme7zvJHvg=="],
 
     "@alexanderfortin/pi-usage-lib/temporal-polyfill/temporal-spec": ["temporal-spec@0.3.1", "", {}, "sha512-B4TUhezh9knfSIMwt7RVggApDRJZo73uZdj8AacL2mZ8RP5KtLianh2MXxL06GN9ESYiIsiuoLQhgVfwe55Yhw=="],
-
-    "@alexanderfortin/semantic-release-keep-a-changelog/temporal-polyfill/temporal-spec": ["temporal-spec@0.3.1", "", {}, "sha512-B4TUhezh9knfSIMwt7RVggApDRJZo73uZdj8AacL2mZ8RP5KtLianh2MXxL06GN9ESYiIsiuoLQhgVfwe55Yhw=="],
 
     "@earendil-works/pi-ai/http-proxy-agent/agent-base": ["agent-base@7.1.4", "", {}, "sha512-MnA+YT8fwfJPgBx3m60MNqakm30XOkyIoH1y6huTQvC0PwZG7ki8NacLBcrPbNoo8vEZy7Jpuk7+jMO+CUovTQ=="],
 
