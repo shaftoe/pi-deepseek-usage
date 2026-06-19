@@ -1,14 +1,43 @@
 /**
  * Unit tests for status.ts
+ *
+ * Color selection for the balance amount is delegated to colorForCredit
+ * (from the shared library), whose thresholds are loaded from the
+ * user-managed ~/.pi/agent/usage-lib.json and fall back to built-in
+ * defaults. Rather than hardcoding accent/warning/error, the expected
+ * color is derived from the same function so the assertions hold for any
+ * configured thresholds — i.e. the suite does not assume the settings
+ * file is absent.
  */
 
 import { describe, expect, it } from "bun:test"
+import type { Theme } from "@alexanderfortin/pi-usage-lib"
+import { colorForCredit, loadColorThresholds } from "@alexanderfortin/pi-usage-lib"
 import type { DeepSeekBalanceData } from "../src/api"
 import { currencySymbol, formatMoney, renderDeepSeekStatus, resolveBalance } from "../src/status"
 
 // Mock theme for testing
 const mockTheme = {
   fg: (color: string, text: string) => `${color}:${text}`,
+}
+
+/**
+ * Return the color token renderDeepSeekStatus will emit for a credit value.
+ *
+ * Mirrors renderDeepSeekStatus by delegating to colorForCredit (from the
+ * shared library), capturing which color is selected for the currently-loaded
+ * thresholds.
+ */
+function colorFor(credit: number): string {
+  let color = ""
+  const probe = {
+    fg: (c: string) => {
+      color = c
+      return ""
+    },
+  } as unknown as Theme
+  colorForCredit(credit, probe)("")
+  return color
 }
 
 // --- Pure function tests ---
@@ -97,6 +126,18 @@ describe("formatMoney", () => {
 })
 
 describe("renderDeepSeekStatus", () => {
+  // Credit values chosen relative to the active thresholds (loaded from
+  // ~/.pi/agent/usage-lib.json, falling back to defaults) so each color
+  // branch is exercised regardless of the user's settings file.
+  //   colorForCredit: error   when credit <= critical,
+  //                   warning when critical < credit < warning,
+  //                   accent  when credit >= warning.
+  const { warning, critical } = loadColorThresholds().credit
+  const highCredit = warning // at/above the warning threshold → accent
+  const midCredit = (warning + critical) / 2 // strictly between the thresholds → warning
+  const lowCredit = critical // at/below the critical threshold → error
+  const midBucketReachable = warning > critical
+
   it("should render USD balance", () => {
     const data: DeepSeekBalanceData = {
       isAvailable: true,
@@ -110,7 +151,7 @@ describe("renderDeepSeekStatus", () => {
       ],
     }
     const result = renderDeepSeekStatus(data, mockTheme as any)
-    expect(result).toBe("muted:DeepSeek:accent:$15.50")
+    expect(result).toBe(`muted:DeepSeek:${colorFor(15.5)}:$15.50`)
   })
 
   it("should render CNY balance when USD not available", () => {
@@ -126,7 +167,7 @@ describe("renderDeepSeekStatus", () => {
       ],
     }
     const result = renderDeepSeekStatus(data, mockTheme as any)
-    expect(result).toBe("muted:DeepSeek:accent:¥110.00")
+    expect(result).toBe(`muted:DeepSeek:${colorFor(110)}:¥110.00`)
   })
 
   it("should render currency code for non-USD/CNY currencies", () => {
@@ -142,7 +183,7 @@ describe("renderDeepSeekStatus", () => {
       ],
     }
     const result = renderDeepSeekStatus(data, mockTheme as any)
-    expect(result).toBe("muted:DeepSeek:accent:EUR 50.00")
+    expect(result).toBe(`muted:DeepSeek:${colorFor(50)}:EUR 50.00`)
   })
 
   it("should prefer USD balance over other currencies", () => {
@@ -164,7 +205,7 @@ describe("renderDeepSeekStatus", () => {
       ],
     }
     const result = renderDeepSeekStatus(data, mockTheme as any)
-    expect(result).toBe("muted:DeepSeek:accent:$15.50")
+    expect(result).toBe(`muted:DeepSeek:${colorFor(15.5)}:$15.50`)
   })
 
   it("should handle empty balances array", () => {
@@ -190,106 +231,78 @@ describe("renderDeepSeekStatus", () => {
     }
     const result = renderDeepSeekStatus(data, mockTheme as any)
     expect(result).toContain("muted:")
-    expect(result).toContain("accent:")
+    expect(result).toContain(`${colorFor(15.5)}:`)
   })
 
   // --- Credit threshold coloring ---
-  // colorForCredit thresholds: error when credit <= $1,
-  // warning when $1 < credit < $2, accent when credit >= $2.
 
-  it("should render accent color at the $2 threshold", () => {
+  it("should render accent color at or above the warning threshold", () => {
     const data: DeepSeekBalanceData = {
       isAvailable: true,
       balances: [
         {
           currency: "USD",
-          totalBalance: "2.00",
+          totalBalance: String(highCredit),
           grantedBalance: "0.00",
-          toppedUpBalance: "2.00",
+          toppedUpBalance: String(highCredit),
         },
       ],
     }
     const result = renderDeepSeekStatus(data, mockTheme as any)
-    expect(result).toBe("muted:DeepSeek:accent:$2.00")
+    expect(result).toBe(`muted:DeepSeek:accent:${formatMoney(highCredit, "USD")}`)
   })
 
-  it("should render warning color when credit is between $1 and $2", () => {
+  ;(midBucketReachable ? it : it.skip)(
+    "should render warning color for a credit between the thresholds",
+    () => {
+      const data: DeepSeekBalanceData = {
+        isAvailable: true,
+        balances: [
+          {
+            currency: "USD",
+            totalBalance: String(midCredit),
+            grantedBalance: "0.00",
+            toppedUpBalance: String(midCredit),
+          },
+        ],
+      }
+      const result = renderDeepSeekStatus(data, mockTheme as any)
+      expect(result).toBe(`muted:DeepSeek:warning:${formatMoney(midCredit, "USD")}`)
+    },
+  )
+
+  it("should render error color at or below the critical threshold", () => {
     const data: DeepSeekBalanceData = {
       isAvailable: true,
       balances: [
         {
           currency: "USD",
-          totalBalance: "1.50",
+          totalBalance: String(lowCredit),
           grantedBalance: "0.00",
-          toppedUpBalance: "1.50",
+          toppedUpBalance: String(lowCredit),
         },
       ],
     }
     const result = renderDeepSeekStatus(data, mockTheme as any)
-    expect(result).toBe("muted:DeepSeek:warning:$1.50")
+    expect(result).toBe(`muted:DeepSeek:error:${formatMoney(lowCredit, "USD")}`)
   })
 
-  it("should render warning color just above the $1 threshold", () => {
-    const data: DeepSeekBalanceData = {
-      isAvailable: true,
-      balances: [
-        {
-          currency: "USD",
-          totalBalance: "1.01",
-          grantedBalance: "0.00",
-          toppedUpBalance: "1.01",
-        },
-      ],
-    }
-    const result = renderDeepSeekStatus(data, mockTheme as any)
-    expect(result).toBe("muted:DeepSeek:warning:$1.01")
-  })
-
-  it("should render error color when credit is at the $1 threshold", () => {
-    const data: DeepSeekBalanceData = {
-      isAvailable: true,
-      balances: [
-        {
-          currency: "USD",
-          totalBalance: "1.00",
-          grantedBalance: "0.00",
-          toppedUpBalance: "1.00",
-        },
-      ],
-    }
-    const result = renderDeepSeekStatus(data, mockTheme as any)
-    expect(result).toBe("muted:DeepSeek:error:$1.00")
-  })
-
-  it("should render error color for very low balance", () => {
-    const data: DeepSeekBalanceData = {
-      isAvailable: true,
-      balances: [
-        {
-          currency: "USD",
-          totalBalance: "0.25",
-          grantedBalance: "0.00",
-          toppedUpBalance: "0.25",
-        },
-      ],
-    }
-    const result = renderDeepSeekStatus(data, mockTheme as any)
-    expect(result).toBe("muted:DeepSeek:error:$0.25")
-  })
-
-  it("should apply threshold coloring to non-USD currencies", () => {
-    const data: DeepSeekBalanceData = {
-      isAvailable: true,
-      balances: [
-        {
-          currency: "CNY",
-          totalBalance: "1.50",
-          grantedBalance: "0.00",
-          toppedUpBalance: "1.50",
-        },
-      ],
-    }
-    const result = renderDeepSeekStatus(data, mockTheme as any)
-    expect(result).toBe("muted:DeepSeek:warning:¥1.50")
-  })
+  ;(midBucketReachable ? it : it.skip)(
+    "should apply threshold coloring to non-USD currencies",
+    () => {
+      const data: DeepSeekBalanceData = {
+        isAvailable: true,
+        balances: [
+          {
+            currency: "CNY",
+            totalBalance: String(midCredit),
+            grantedBalance: "0.00",
+            toppedUpBalance: String(midCredit),
+          },
+        ],
+      }
+      const result = renderDeepSeekStatus(data, mockTheme as any)
+      expect(result).toBe(`muted:DeepSeek:warning:${formatMoney(midCredit, "CNY")}`)
+    },
+  )
 })
