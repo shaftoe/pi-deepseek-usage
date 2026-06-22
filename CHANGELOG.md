@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.4] - 2026-06-22
+
+### Changed
+
+- **deps**: bump actions/checkout from 6 to 7 (#19)
+
 ## [0.3.3] - 2026-06-22
 
 ### Changed
@@ -93,6 +99,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - bump release
 
+[0.3.4]: https://github.com/shaftoe/pi-deepseek-usage/compare/v0.3.3...v0.3.4
 [0.3.3]: https://github.com/shaftoe/pi-deepseek-usage/compare/v0.3.2...v0.3.3
 [0.3.2]: https://github.com/shaftoe/pi-deepseek-usage/compare/v0.3.1...v0.3.2
 [0.3.1]: https://github.com/shaftoe/pi-deepseek-usage/compare/v0.3.0...v0.3.1
