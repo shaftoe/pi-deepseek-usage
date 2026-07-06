@@ -9,7 +9,7 @@
         "temporal-polyfill": "^1.0.1",
       },
       "devDependencies": {
-        "@alexanderfortin/semantic-release-keep-a-changelog": "^0.4.5",
+        "@alexanderfortin/semantic-release-keep-a-changelog": "^0.4.6",
         "@biomejs/biome": "^2.5.2",
         "@semantic-release/commit-analyzer": "^13.0.1",
         "@semantic-release/exec": "^7.1.0",
@@ -38,7 +38,7 @@
 
     "@alexanderfortin/pi-usage-lib": ["@alexanderfortin/pi-usage-lib@0.2.3", "", { "dependencies": { "temporal-polyfill": "^1.0.1" }, "peerDependencies": { "@earendil-works/pi-coding-agent": "^0.80.2", "@earendil-works/pi-tui": "^0.80.2" } }, "sha512-q34Cl1mjNesTUp2B35SIOUXbSzC/vJb92G9kABlhDNYmnHOvh9UGKtZxpwn25EET271YebruKIOWV7tvW9kgaw=="],
 
-    "@alexanderfortin/semantic-release-keep-a-changelog": ["@alexanderfortin/semantic-release-keep-a-changelog@0.4.5", "", { "dependencies": { "@semantic-release/error": "^4.0.0", "conventional-changelog-writer": "9.1.0", "conventional-commits-filter": "^6.0.0", "conventional-commits-parser": "7.0.0", "get-stream": "9.0.1", "into-stream": "^9.1.0", "temporal-polyfill": "^1.0.1" }, "peerDependencies": { "semantic-release": ">=24.0.0" } }, "sha512-nUfDxmzkn5jaCwBkqHacodveJpfJWWT5xoDbKgLGIZ5H9Dq6te0c/3vWHMQ6pBj7nj7iZEKDnOkFeluWL1JSzg=="],
+    "@alexanderfortin/semantic-release-keep-a-changelog": ["@alexanderfortin/semantic-release-keep-a-changelog@0.4.6", "", { "dependencies": { "@semantic-release/error": "^4.0.0", "conventional-changelog-writer": "^9.1.1", "conventional-commits-filter": "^6.0.1", "conventional-commits-parser": "^7.0.1", "get-stream": "9.0.1", "into-stream": "^9.1.0", "temporal-polyfill": "^1.0.1" }, "peerDependencies": { "semantic-release": ">=24.0.0" } }, "sha512-ggogd4FrRHJdoF1E71AMfOyodcHfQ4KaEOXVj05URMDohh9xBt9YLBv2Ke7fvLHuAvFbn+UC5MBjbT/PKzU4sw=="],
 
     "@anthropic-ai/sdk": ["@anthropic-ai/sdk@0.91.1", "", { "dependencies": { "json-schema-to-ts": "^3.1.1" }, "peerDependencies": { "zod": "^3.25.0 || ^4.0.0" }, "optionalPeers": ["zod"], "bin": { "anthropic-ai-sdk": "bin/cli" } }, "sha512-LAmu761tSN9r66ixvmciswUj/ZC+1Q4iAfpedTfSVLeswRwnY3n2Nb6Tsk+cLPP28aLOPWeMgIuTuCcMC6W/iw=="],
 
@@ -118,7 +118,7 @@
 
     "@colors/colors": ["@colors/colors@1.5.0", "", {}, "sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ=="],
 
-    "@conventional-changelog/template": ["@conventional-changelog/template@1.2.0", "", {}, "sha512-12qHxvlKjHmP0PQ+17EREgC7lWyLwbph1RKcZQZ7k7ZWGmrxfxC9gadHGfvzr0g0u8BhiBGg3tks93txodlyRQ=="],
+    "@conventional-changelog/template": ["@conventional-changelog/template@1.2.1", "", {}, "sha512-TzlTVpKPjaqW6qOYjQcYUDuGsLCNsvFHVBXkYGTAnf5V37jCWrE5haKNXzz0WZUtVHjrpV76L1buANjwXMfT8w=="],
 
     "@earendil-works/pi-agent-core": ["@earendil-works/pi-agent-core@0.79.7", "", { "dependencies": { "@earendil-works/pi-ai": "^0.79.7", "ignore": "7.0.5", "typebox": "1.1.38", "yaml": "2.9.0" } }, "sha512-kbwGwqq2oy0fr1WYCCgKavUriEL7pWQN/vkF8oCnZ8H+0xu86kAp1iHEVWsMm+NyslLCe4SA1ushfMT/yFhQfQ=="],
 
@@ -320,11 +320,11 @@
 
     "conventional-changelog-angular": ["conventional-changelog-angular@8.3.1", "", { "dependencies": { "compare-func": "^2.0.0" } }, "sha512-6gfI3otXK5Ph5DfCOI1dblr+kN3FAm5a97hYoQkqNZxOaYa5WKfXH+AnpsmS+iUH2mgVC2Cg2Qw9m5OKcmNrIg=="],
 
-    "conventional-changelog-writer": ["conventional-changelog-writer@9.1.0", "", { "dependencies": { "@conventional-changelog/template": "^1.2.0", "@simple-libs/stream-utils": "^2.0.0", "conventional-commits-filter": "^6.0.0", "meow": "^14.0.0", "semver": "^7.5.2" }, "bin": { "conventional-changelog-writer": "./dist/cli/index.js" } }, "sha512-m3eMC0wT6gecDZCS1txbDCNurmAlLQdGyi7Os+n/sKiC1T4U/K/VJH530DCNyWwq60bUaeiPPxwtA1hMR+Pqbg=="],
+    "conventional-changelog-writer": ["conventional-changelog-writer@9.1.1", "", { "dependencies": { "@conventional-changelog/template": "^1.2.1", "@simple-libs/stream-utils": "^2.0.0", "conventional-commits-filter": "^6.0.1", "meow": "^14.0.0", "semver": "^7.5.2" }, "bin": { "conventional-changelog-writer": "./dist/cli/index.js" } }, "sha512-rkrh3VdVTfeZDwnrV1zrGZq9zzFsYLtyE0ksJ7DD/0QoXzx+fn9higBnOUl5oCm18h3SoFYMDsoYjUQN5LA8AA=="],
 
-    "conventional-commits-filter": ["conventional-commits-filter@6.0.0", "", {}, "sha512-taSykxCRrEryH1oTkqUa6bvIgSPWG7BRs4mwuwQR68099xRQCTBIIbu9vs6xHO2YW4iKuB4GIfAZVQW5BLYG6Q=="],
+    "conventional-commits-filter": ["conventional-commits-filter@6.0.1", "", {}, "sha512-cs+LadpH7Kpw0M3k8wurk+sOVVDAENA0iK4OBOrkL94j5lEVYRJ4j3zd2bhY9qgzyrPqthdcYT3axzRN7AliMg=="],
 
-    "conventional-commits-parser": ["conventional-commits-parser@7.0.0", "", { "dependencies": { "@simple-libs/stream-utils": "^2.0.0", "meow": "^14.0.0" }, "bin": { "conventional-commits-parser": "./dist/cli/index.js" } }, "sha512-dZe/p+FgGQLNJFqaCgNdl8j6a7gI8xuaN30Wy5g7nvyK3jqOpNUEUZ3pGJ5D68h89uRh038FtkeOk/bnGmYkmg=="],
+    "conventional-commits-parser": ["conventional-commits-parser@7.0.1", "", { "dependencies": { "@simple-libs/stream-utils": "^2.0.0", "meow": "^14.0.0" }, "bin": { "conventional-commits-parser": "./dist/cli/index.js" } }, "sha512-6VtskFpPsNkGVk/TY2RnV/MEdKfvCPBtQZN9x8jh9+k5RWBQ+tiaWn5UFCzTr0Dd88iKx7xghxbjBRp5uIzp3g=="],
 
     "convert-hrtime": ["convert-hrtime@5.0.0", "", {}, "sha512-lOETlkIeYSJWcbbcvjRKGxVMXJR+8+OQb/mTPbA4ObPMytYIsUbuOE0Jzy60hjARYszq1id0j8KgVhC+WGZVTg=="],
 
