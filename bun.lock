@@ -9,7 +9,7 @@
         "temporal-polyfill": "^1.0.2",
       },
       "devDependencies": {
-        "@alexanderfortin/semantic-release-keep-a-changelog": "^0.4.9",
+        "@alexanderfortin/semantic-release-keep-a-changelog": "^0.4.10",
         "@biomejs/biome": "^2.5.6",
         "@semantic-release/commit-analyzer": "^13.0.1",
         "@semantic-release/exec": "^7.1.0",
@@ -21,8 +21,8 @@
         "typescript": "^7.0.2",
       },
       "peerDependencies": {
-        "@earendil-works/pi-coding-agent": "^0.82.1",
-        "@earendil-works/pi-tui": "^0.82.1",
+        "@earendil-works/pi-coding-agent": "^0.83.0",
+        "@earendil-works/pi-tui": "^0.83.0",
         "@sinclair/typebox": "^0.34.52",
       },
     },
@@ -38,7 +38,7 @@
 
     "@alexanderfortin/pi-usage-lib": ["@alexanderfortin/pi-usage-lib@0.2.4", "", { "dependencies": { "temporal-polyfill": "^1.0.1" }, "peerDependencies": { "@earendil-works/pi-coding-agent": "^0.80.3", "@earendil-works/pi-tui": "^0.80.3" } }, "sha512-TOJGlL9od/eBSBfefUqk2CnT4VH/oum9xvVeUp/iAFAa9M85m6GLykXkGzsWJ8Isc1LLgtAKZVi5+I0FkiAMXA=="],
 
-    "@alexanderfortin/semantic-release-keep-a-changelog": ["@alexanderfortin/semantic-release-keep-a-changelog@0.4.9", "", { "dependencies": { "@semantic-release/error": "^4.0.0", "conventional-changelog-writer": "^9.2.0", "conventional-commits-filter": "^6.0.1", "conventional-commits-parser": "^7.1.0", "get-stream": "9.0.1", "into-stream": "^9.1.0", "temporal-polyfill": "^1.0.1" }, "peerDependencies": { "semantic-release": ">=24.0.0" } }, "sha512-2gFM1NZW5F+q/PfSFUYBEjcI+FQ7L18iHkx8yqlotaB8mWDOY8gZLOhIkVZlJQulZSZ8QymG8bIFSntMo6ru+Q=="],
+    "@alexanderfortin/semantic-release-keep-a-changelog": ["@alexanderfortin/semantic-release-keep-a-changelog@0.4.10", "", { "dependencies": { "@semantic-release/error": "^4.0.0", "conventional-changelog-writer": "^9.2.0", "conventional-commits-filter": "^6.0.1", "conventional-commits-parser": "^7.1.2", "get-stream": "9.0.1", "into-stream": "^9.1.0", "temporal-polyfill": "^1.0.2" }, "peerDependencies": { "semantic-release": ">=24.0.0" } }, "sha512-XnI/6BRokSPavVr9OOHdWaWjNhS3gQISRNrmpjSh/POC2Uxx2YKClUzDgko257ksJ3we75LW3RMFFOG3w38cJQ=="],
 
     "@anthropic-ai/sdk": ["@anthropic-ai/sdk@0.91.1", "", { "dependencies": { "json-schema-to-ts": "^3.1.1" }, "peerDependencies": { "zod": "^3.25.0 || ^4.0.0" }, "optionalPeers": ["zod"], "bin": { "anthropic-ai-sdk": "bin/cli" } }, "sha512-LAmu761tSN9r66ixvmciswUj/ZC+1Q4iAfpedTfSVLeswRwnY3n2Nb6Tsk+cLPP28aLOPWeMgIuTuCcMC6W/iw=="],
 
@@ -366,7 +366,7 @@
 
     "conventional-commits-filter": ["conventional-commits-filter@6.0.1", "", {}, "sha512-cs+LadpH7Kpw0M3k8wurk+sOVVDAENA0iK4OBOrkL94j5lEVYRJ4j3zd2bhY9qgzyrPqthdcYT3axzRN7AliMg=="],
 
-    "conventional-commits-parser": ["conventional-commits-parser@7.1.0", "", { "dependencies": { "@simple-libs/stream-utils": "^2.0.0", "argue-cli": "^3.1.0" }, "bin": { "conventional-commits-parser": "./dist/cli/index.js" } }, "sha512-DPp6hkUjvwIivxbkrTiLXeRswNv1A/4GFA2X6scXma0AMa9632V3TwxmrlkUIEtUktiM3Ln+RrSH2xlP3/jUTw=="],
+    "conventional-commits-parser": ["conventional-commits-parser@7.1.2", "", { "dependencies": { "@simple-libs/stream-utils": "^2.0.0", "argue-cli": "^3.1.0" }, "bin": { "conventional-commits-parser": "./dist/cli/index.js" } }, "sha512-O+x4N2yH+ijvqWlIyTHsXTAP+algNWgGbjY2duCe8w2vUMvUB95cLRslCPfTMQyLAKlet3bhZTdu6ozn4M+QJQ=="],
 
     "convert-hrtime": ["convert-hrtime@5.0.0", "", {}, "sha512-lOETlkIeYSJWcbbcvjRKGxVMXJR+8+OQb/mTPbA4ObPMytYIsUbuOE0Jzy60hjARYszq1id0j8KgVhC+WGZVTg=="],
 
@@ -836,8 +836,6 @@
 
     "@alexanderfortin/pi-usage-lib/temporal-polyfill": ["temporal-polyfill@1.0.1", "", { "dependencies": { "temporal-spec": "1.0.0", "temporal-utils": "1.0.1" } }, "sha512-N2SoI9olnW7BUsU8RosDphZQl9s+WJ8O7PoJMFCr/e5/1rFkVI4GNOWaSeySG+UoP04foPYsnLWbJmbXOiShZg=="],
 
-    "@alexanderfortin/semantic-release-keep-a-changelog/temporal-polyfill": ["temporal-polyfill@1.0.1", "", { "dependencies": { "temporal-spec": "1.0.0", "temporal-utils": "1.0.1" } }, "sha512-N2SoI9olnW7BUsU8RosDphZQl9s+WJ8O7PoJMFCr/e5/1rFkVI4GNOWaSeySG+UoP04foPYsnLWbJmbXOiShZg=="],
-
     "@aws-sdk/core/@aws-sdk/types": ["@aws-sdk/types@3.973.9", "", { "dependencies": { "@smithy/types": "^4.14.2", "tslib": "^2.6.2" } }, "sha512-kuBfgQVdcz5Bmapc4A13YbpVw/pXkesfhetcFYwbntqas8sF41OHyd4o28+/TG2ZQdHBsv90Lsu5y6oitvYCdg=="],
 
     "@aws-sdk/credential-provider-env/@aws-sdk/types": ["@aws-sdk/types@3.973.9", "", { "dependencies": { "@smithy/types": "^4.14.2", "tslib": "^2.6.2" } }, "sha512-kuBfgQVdcz5Bmapc4A13YbpVw/pXkesfhetcFYwbntqas8sF41OHyd4o28+/TG2ZQdHBsv90Lsu5y6oitvYCdg=="],
@@ -1241,8 +1239,6 @@
     "wrap-ansi/ansi-styles": ["ansi-styles@6.2.3", "", {}, "sha512-4Dj6M28JB+oAH8kFkTLUo+a2jwOFkuqb3yucU0CANcRRUbxS0cP0nZYCGjcc3BNXwRIsUVmDGgzawme7zvJHvg=="],
 
     "@alexanderfortin/pi-usage-lib/temporal-polyfill/temporal-spec": ["temporal-spec@1.0.0", "", {}, "sha512-00Ahj1e1ifaERTMOIIGpOCdOo9IEk2m6GGSMedsn9a2SIsGLdOTbmME1Htv6IM82b6VHrzSUTIVc7YHy6hdhFQ=="],
-
-    "@alexanderfortin/semantic-release-keep-a-changelog/temporal-polyfill/temporal-spec": ["temporal-spec@1.0.0", "", {}, "sha512-00Ahj1e1ifaERTMOIIGpOCdOo9IEk2m6GGSMedsn9a2SIsGLdOTbmME1Htv6IM82b6VHrzSUTIVc7YHy6hdhFQ=="],
 
     "@earendil-works/pi-ai/http-proxy-agent/agent-base": ["agent-base@7.1.4", "", {}, "sha512-MnA+YT8fwfJPgBx3m60MNqakm30XOkyIoH1y6huTQvC0PwZG7ki8NacLBcrPbNoo8vEZy7Jpuk7+jMO+CUovTQ=="],
 
