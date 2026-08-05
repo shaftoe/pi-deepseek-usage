@@ -5,19 +5,19 @@
     "": {
       "name": "@alexanderfortin/pi-deepseek-usage",
       "dependencies": {
-        "@alexanderfortin/pi-usage-lib": "^0.2.4",
+        "@alexanderfortin/pi-usage-lib": "^0.2.5",
         "temporal-polyfill": "^1.0.3",
       },
       "devDependencies": {
         "@alexanderfortin/semantic-release-keep-a-changelog": "^0.4.10",
-        "@biomejs/biome": "^2.5.6",
+        "@biomejs/biome": "^2.5.7",
         "@semantic-release/commit-analyzer": "^13.0.1",
         "@semantic-release/exec": "^7.1.0",
         "@semantic-release/git": "^11.0.1",
         "@semantic-release/github": "^12.0.9",
         "@semantic-release/npm": "^13.1.5",
         "@types/bun": "^1.3.14",
-        "semantic-release": "^25.0.8",
+        "semantic-release": "^25.0.9",
         "typescript": "^7.0.2",
       },
       "peerDependencies": {
@@ -36,7 +36,7 @@
 
     "@actions/io": ["@actions/io@3.0.2", "", {}, "sha512-nRBchcMM+QK1pdjO7/idu86rbJI5YHUKCvKs0KxnSYbVe3F51UfGxuZX4Qy/fWlp6l7gWFwIkrOzN+oUK03kfw=="],
 
-    "@alexanderfortin/pi-usage-lib": ["@alexanderfortin/pi-usage-lib@0.2.4", "", { "dependencies": { "temporal-polyfill": "^1.0.1" }, "peerDependencies": { "@earendil-works/pi-coding-agent": "^0.80.3", "@earendil-works/pi-tui": "^0.80.3" } }, "sha512-TOJGlL9od/eBSBfefUqk2CnT4VH/oum9xvVeUp/iAFAa9M85m6GLykXkGzsWJ8Isc1LLgtAKZVi5+I0FkiAMXA=="],
+    "@alexanderfortin/pi-usage-lib": ["@alexanderfortin/pi-usage-lib@0.2.5", "", { "dependencies": { "temporal-polyfill": "^1.0.3" }, "peerDependencies": { "@earendil-works/pi-coding-agent": "^0.83.0", "@earendil-works/pi-tui": "^0.83.0" } }, "sha512-wkbPyXISiaeMY8nDEzXAz/+CIncwIVBHXlJt6GR4CmMMKVUypedqTdo9MI5MF0Eov63jmPSY76cMdm02lFA2bQ=="],
 
     "@alexanderfortin/semantic-release-keep-a-changelog": ["@alexanderfortin/semantic-release-keep-a-changelog@0.4.10", "", { "dependencies": { "@semantic-release/error": "^4.0.0", "conventional-changelog-writer": "^9.2.0", "conventional-commits-filter": "^6.0.1", "conventional-commits-parser": "^7.1.2", "get-stream": "9.0.1", "into-stream": "^9.1.0", "temporal-polyfill": "^1.0.2" }, "peerDependencies": { "semantic-release": ">=24.0.0" } }, "sha512-XnI/6BRokSPavVr9OOHdWaWjNhS3gQISRNrmpjSh/POC2Uxx2YKClUzDgko257ksJ3we75LW3RMFFOG3w38cJQ=="],
 
@@ -98,23 +98,23 @@
 
     "@babel/runtime": ["@babel/runtime@7.29.2", "", {}, "sha512-JiDShH45zKHWyGe4ZNVRrCjBz8Nh9TMmZG1kh4QTK8hCBTWBi8Da+i7s1fJw7/lYpM4ccepSNfqzZ/QvABBi5g=="],
 
-    "@biomejs/biome": ["@biomejs/biome@2.5.6", "", { "optionalDependencies": { "@biomejs/cli-darwin-arm64": "2.5.6", "@biomejs/cli-darwin-x64": "2.5.6", "@biomejs/cli-linux-arm64": "2.5.6", "@biomejs/cli-linux-arm64-musl": "2.5.6", "@biomejs/cli-linux-x64": "2.5.6", "@biomejs/cli-linux-x64-musl": "2.5.6", "@biomejs/cli-win32-arm64": "2.5.6", "@biomejs/cli-win32-x64": "2.5.6" }, "bin": { "biome": "bin/biome" } }, "sha512-lxVNjv7UF6KfhMJfL9gaUHbWdJdHbsAj6OSmwSYNdhRuG67NxNQ4Xdvh3TUxsSK9sBzJBQhEJj3AopmmNJ5pSA=="],
+    "@biomejs/biome": ["@biomejs/biome@2.5.7", "", { "optionalDependencies": { "@biomejs/cli-darwin-arm64": "2.5.7", "@biomejs/cli-darwin-x64": "2.5.7", "@biomejs/cli-linux-arm64": "2.5.7", "@biomejs/cli-linux-arm64-musl": "2.5.7", "@biomejs/cli-linux-x64": "2.5.7", "@biomejs/cli-linux-x64-musl": "2.5.7", "@biomejs/cli-win32-arm64": "2.5.7", "@biomejs/cli-win32-x64": "2.5.7" }, "bin": { "biome": "bin/biome" } }, "sha512-zr8K/DcY5tYsQOQwqMJ0AWElo6QgmgNI7idXgXLhevVszlt8RGVpesEJPqx3ThazLaOwjJ5Y8fz3BtH5fGZNsw=="],
 
-    "@biomejs/cli-darwin-arm64": ["@biomejs/cli-darwin-arm64@2.5.6", "", { "os": "darwin", "cpu": "arm64" }, "sha512-zMOLZP4oMrjh6m1zcSj1ud2awUPgTuMVbmQhYYWL7J8HwCnbHHBvTm7VBTRuY7epT5bez76IpKYQ11ZAqHFlnw=="],
+    "@biomejs/cli-darwin-arm64": ["@biomejs/cli-darwin-arm64@2.5.7", "", { "os": "darwin", "cpu": "arm64" }, "sha512-vxo/Ls3/PYdQWyLhYYcgMOCzQypAjcY+iihS8M0wW03l16TCLW4zqZzGo75gm1VdCMj38hTVZ31KBWrZ4G9dJw=="],
 
-    "@biomejs/cli-darwin-x64": ["@biomejs/cli-darwin-x64@2.5.6", "", { "os": "darwin", "cpu": "x64" }, "sha512-JAC1VqzvO7Th5ZplU0G2uGfkZbxEe9uDDektPAhF0JLusoz1w+T4okp2bkykI0bbaO2vslKiRfj4gU43JaGreA=="],
+    "@biomejs/cli-darwin-x64": ["@biomejs/cli-darwin-x64@2.5.7", "", { "os": "darwin", "cpu": "x64" }, "sha512-Cd3Ga61amT/Yl/0x8elP5hhGYaFy4bw6WuysTgf7oo8TA5tJ5A1k+DkVoJ2BHbTVil51gTX9VPzArnrlLJ3Kyg=="],
 
-    "@biomejs/cli-linux-arm64": ["@biomejs/cli-linux-arm64@2.5.6", "", { "os": "linux", "cpu": "arm64" }, "sha512-6XsYwCFkp5sMxl85ffhgeGpGgs6A7dRYFnkceZ7WVxvycuTnGdD5xa534Z3xfrBQ0JCMK/mujT6ZNPJoghedwg=="],
+    "@biomejs/cli-linux-arm64": ["@biomejs/cli-linux-arm64@2.5.7", "", { "os": "linux", "cpu": "arm64" }, "sha512-rR2QE0yF2GYSuYuKIa7pKvODGJqnOH+2eDREAM8wV+mWKSkMQKdAp4zXEZfTaxY8PMoNONnpgSWcBCyLDPDOKg=="],
 
-    "@biomejs/cli-linux-arm64-musl": ["@biomejs/cli-linux-arm64-musl@2.5.6", "", { "os": "linux", "cpu": "arm64" }, "sha512-eUa3jeeYvfMt19LBeh6E5PUZpxnTC4JqNWo+EDjTtQjAr2xLGnWaxACtVU1DQqmHYbvThlJzLX+ZsYgrqh2qVw=="],
+    "@biomejs/cli-linux-arm64-musl": ["@biomejs/cli-linux-arm64-musl@2.5.7", "", { "os": "linux", "cpu": "arm64" }, "sha512-xPI5yB6XlpDbNkS+bm1t42olw5c4l3UrlOmLg7KtLJvjvkNF/1V4tnUgfkylGIeb3u/T+BzMGYqgQhzjAoJzuQ=="],
 
-    "@biomejs/cli-linux-x64": ["@biomejs/cli-linux-x64@2.5.6", "", { "os": "linux", "cpu": "x64" }, "sha512-Pop9VXCFUhFTMfFefZ39S+u2rOPyNp5iHlxbZRwXGACHLy2r0jjiRgJHmaEKJzL3SyxlVeGShXhvvElvWowonA=="],
+    "@biomejs/cli-linux-x64": ["@biomejs/cli-linux-x64@2.5.7", "", { "os": "linux", "cpu": "x64" }, "sha512-FQgqJhscrqJUFptGaRSUJWlXAExwWcDwLuK49dvKfkQ1bB5SEEyFssnsxQY83Xm6jR0EbbX3+8+D5bfvYqUG2Q=="],
 
-    "@biomejs/cli-linux-x64-musl": ["@biomejs/cli-linux-x64-musl@2.5.6", "", { "os": "linux", "cpu": "x64" }, "sha512-2Vp13QdKysH3HIWLaYLhUUwbK+jbZonJD1K+Lr0d0RO4wH7mkYd43vJixEDm8cUWrowoRz4UUHF1nm9Ae7ym8A=="],
+    "@biomejs/cli-linux-x64-musl": ["@biomejs/cli-linux-x64-musl@2.5.7", "", { "os": "linux", "cpu": "x64" }, "sha512-rE5VZi+qtmPgQH+l7jVxYoZ18b/TiHEhulhMpjmCZH1PltSbjRcxNWywC3HZ9tYottG7ORkeTtoscBilKSBm0g=="],
 
-    "@biomejs/cli-win32-arm64": ["@biomejs/cli-win32-arm64@2.5.6", "", { "os": "win32", "cpu": "arm64" }, "sha512-tDGshcm6BdkZOCGnTDX0Y8/U4IfBSlnUU7T56nNDuPEfed+aHg+u8G36NB43fJVl0Os6+QURXIE1yuD7AaEofA=="],
+    "@biomejs/cli-win32-arm64": ["@biomejs/cli-win32-arm64@2.5.7", "", { "os": "win32", "cpu": "arm64" }, "sha512-Oq4x0CCwP4jirrcTywXs5kOGZ4v5vuEP+gWrbtjApOA2CL9F3F9GlIdQIci8AKSCa/zURanMRpX/4wQ7Am6hHg=="],
 
-    "@biomejs/cli-win32-x64": ["@biomejs/cli-win32-x64@2.5.6", "", { "os": "win32", "cpu": "x64" }, "sha512-WN05KwXnTO/2J45RQPvzZMXf7tZUIofHoR35xIPfCo7pQ2RFidxI8sfb5mGsaTxdMmEOzHzOPRCdA5/fCpc7xQ=="],
+    "@biomejs/cli-win32-x64": ["@biomejs/cli-win32-x64@2.5.7", "", { "os": "win32", "cpu": "x64" }, "sha512-V+0wu/nrj2S+MhP4EQ0uHNolP0IALEsz45pg0WoKkHfDeh0+ItHwP/p7bX5RPoMOl9NkpHYWdYPhIcy2mACHvQ=="],
 
     "@colors/colors": ["@colors/colors@1.5.0", "", {}, "sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ=="],
 
@@ -688,7 +688,7 @@
 
     "safe-buffer": ["safe-buffer@5.1.2", "", {}, "sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g=="],
 
-    "semantic-release": ["semantic-release@25.0.8", "", { "dependencies": { "@semantic-release/commit-analyzer": "^13.0.1", "@semantic-release/error": "^4.0.0", "@semantic-release/github": "^12.0.0", "@semantic-release/npm": "^13.1.1", "@semantic-release/release-notes-generator": "^14.1.0", "aggregate-error": "^5.0.0", "cosmiconfig": "^9.0.0", "debug": "^4.0.0", "env-ci": "^11.0.0", "execa": "^9.0.0", "figures": "^6.0.0", "find-versions": "^6.0.0", "get-stream": "^6.0.0", "git-log-parser": "^1.2.0", "hook-std": "^4.0.0", "hosted-git-info": "^9.0.0", "import-from-esm": "^2.0.0", "lodash-es": "^4.17.21", "marked": "^15.0.0", "marked-terminal": "^7.3.0", "micromatch": "^4.0.2", "p-each-series": "^3.0.0", "p-reduce": "^3.0.0", "read-package-up": "^12.0.0", "resolve-from": "^5.0.0", "semver": "^7.3.2", "signale": "^1.2.1", "yargs": "^18.0.0" }, "bin": { "semantic-release": "bin/semantic-release.js" } }, "sha512-w/iZ0bur36rKffXZYmIUmy068eoBY3Ij1DCCddx2JwWEM5Tg+eU9ld/E9qSInVvPASyyR2Ln/XGfQ9OZrMlhtw=="],
+    "semantic-release": ["semantic-release@25.0.9", "", { "dependencies": { "@semantic-release/commit-analyzer": "^13.0.1", "@semantic-release/error": "^4.0.0", "@semantic-release/github": "^12.0.0", "@semantic-release/npm": "^13.1.1", "@semantic-release/release-notes-generator": "^14.1.0", "aggregate-error": "^5.0.0", "cosmiconfig": "^9.0.0", "debug": "^4.0.0", "env-ci": "^11.0.0", "execa": "^9.0.0", "figures": "^6.0.0", "find-versions": "^6.0.0", "get-stream": "^6.0.0", "git-log-parser": "^1.2.0", "hook-std": "^4.0.0", "hosted-git-info": "^9.0.0", "import-from-esm": "^2.0.0", "lodash-es": "^4.17.21", "marked": "^15.0.0", "marked-terminal": "^7.3.0", "micromatch": "^4.0.2", "p-each-series": "^3.0.0", "p-reduce": "^3.0.0", "read-package-up": "^12.0.0", "resolve-from": "^5.0.0", "semver": "^7.3.2", "signale": "^1.2.1", "yargs": "^18.0.0" }, "bin": { "semantic-release": "bin/semantic-release.js" } }, "sha512-bxve7csK0/Txr++CkfrmV+X1r4jqiSOw2WsSad9E2S68R+ZfLBwDn8IceM8WfiOmKQIHgsQc1cNA8Dzg7U75pg=="],
 
     "semver": ["semver@7.8.0", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-AcM7dV/5ul4EekoQ29Agm5vri8JNqRyj39o0qpX6vDF2GZrtutZl5RwgD1XnZjiTAfncsJhMI48QQH3sN87YNA=="],
 
@@ -833,8 +833,6 @@
     "zod-to-json-schema": ["zod-to-json-schema@3.25.2", "", { "peerDependencies": { "zod": "^3.25.28 || ^4" } }, "sha512-O/PgfnpT1xKSDeQYSCfRI5Gy3hPf91mKVDuYLUHZJMiDFptvP41MSnWofm8dnCm0256ZNfZIM7DSzuSMAFnjHA=="],
 
     "@actions/http-client/undici": ["undici@6.25.0", "", {}, "sha512-ZgpWDC5gmNiuY9CnLVXEH8rl50xhRCuLNA97fAUnKi8RRuV4E6KG31pDTsLVUKnohJE0I3XDrTeEydAXRw47xg=="],
-
-    "@alexanderfortin/pi-usage-lib/temporal-polyfill": ["temporal-polyfill@1.0.1", "", { "dependencies": { "temporal-spec": "1.0.0", "temporal-utils": "1.0.1" } }, "sha512-N2SoI9olnW7BUsU8RosDphZQl9s+WJ8O7PoJMFCr/e5/1rFkVI4GNOWaSeySG+UoP04foPYsnLWbJmbXOiShZg=="],
 
     "@alexanderfortin/semantic-release-keep-a-changelog/temporal-polyfill": ["temporal-polyfill@1.0.2", "", { "dependencies": { "temporal-spec": "1.0.1", "temporal-utils": "1.0.1" } }, "sha512-pTyp/7kfStJQbJ8YOHmcJItkxvOGCZHu3PaVgLvLnxFS7O12EPiWLElnRre/rw77z4TGZX/gvdqMXWn6ispQvA=="],
 
@@ -1239,8 +1237,6 @@
     "tinyglobby/picomatch": ["picomatch@4.0.4", "", {}, "sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A=="],
 
     "wrap-ansi/ansi-styles": ["ansi-styles@6.2.3", "", {}, "sha512-4Dj6M28JB+oAH8kFkTLUo+a2jwOFkuqb3yucU0CANcRRUbxS0cP0nZYCGjcc3BNXwRIsUVmDGgzawme7zvJHvg=="],
-
-    "@alexanderfortin/pi-usage-lib/temporal-polyfill/temporal-spec": ["temporal-spec@1.0.0", "", {}, "sha512-00Ahj1e1ifaERTMOIIGpOCdOo9IEk2m6GGSMedsn9a2SIsGLdOTbmME1Htv6IM82b6VHrzSUTIVc7YHy6hdhFQ=="],
 
     "@earendil-works/pi-ai/http-proxy-agent/agent-base": ["agent-base@7.1.4", "", {}, "sha512-MnA+YT8fwfJPgBx3m60MNqakm30XOkyIoH1y6huTQvC0PwZG7ki8NacLBcrPbNoo8vEZy7Jpuk7+jMO+CUovTQ=="],
 
