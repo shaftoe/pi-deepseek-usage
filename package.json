@@ -30,7 +30,7 @@
     "temporal-polyfill": "^1.0.4"
   },
   "devDependencies": {
-    "@alexanderfortin/semantic-release-keep-a-changelog": "^0.4.11",
+    "@alexanderfortin/semantic-release-keep-a-changelog": "^0.4.12",
     "@biomejs/biome": "^2.5.8",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/exec": "^7.1.0",
@@ -42,8 +42,8 @@
     "typescript": "^7.0.2"
   },
   "peerDependencies": {
-    "@earendil-works/pi-coding-agent": "^0.84.1",
-    "@earendil-works/pi-tui": "^0.84.1",
+    "@earendil-works/pi-coding-agent": "^0.84.2",
+    "@earendil-works/pi-tui": "^0.84.2",
     "@sinclair/typebox": "^0.34.52"
   },
   "publishConfig": {
