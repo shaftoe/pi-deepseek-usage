@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.20] - 2026-08-18
+
+### Changed
+
+- **deps**: update dependencies (#47)
+
 ## [0.3.19] - 2026-08-15
 
 ### Changed
@@ -198,6 +204,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - bump release
 
+[0.3.20]: https://github.com/shaftoe/pi-deepseek-usage/compare/v0.3.19...v0.3.20
 [0.3.19]: https://github.com/shaftoe/pi-deepseek-usage/compare/v0.3.18...v0.3.19
 [0.3.18]: https://github.com/shaftoe/pi-deepseek-usage/compare/v0.3.17...v0.3.18
 [0.3.17]: https://github.com/shaftoe/pi-deepseek-usage/compare/v0.3.16...v0.3.17
