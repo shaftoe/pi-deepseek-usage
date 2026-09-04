@@ -26,7 +26,7 @@
     "release:dry-run": "semantic-release --dry-run"
   },
   "dependencies": {
-    "@alexanderfortin/pi-usage-lib": "^0.2.7",
+    "@alexanderfortin/pi-usage-lib": "^0.2.8",
     "temporal-polyfill": "^1.0.4"
   },
   "devDependencies": {
@@ -42,8 +42,8 @@
     "typescript": "^7.0.2"
   },
   "peerDependencies": {
-    "@earendil-works/pi-coding-agent": "^0.84.4",
-    "@earendil-works/pi-tui": "^0.84.4",
+    "@earendil-works/pi-coding-agent": "^0.85.0",
+    "@earendil-works/pi-tui": "^0.85.0",
     "@sinclair/typebox": "^0.34.52"
   },
   "publishConfig": {
