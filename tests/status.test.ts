@@ -10,9 +10,9 @@
  * file is absent.
  */
 
-import { describe, expect, it } from "bun:test"
 import type { Theme } from "@alexanderfortin/pi-usage-lib"
 import { colorForCredit, loadColorThresholds } from "@alexanderfortin/pi-usage-lib"
+import { describe, expect, it } from "vitest"
 import type { DeepSeekBalanceData } from "../src/api"
 import { currencySymbol, formatMoney, renderDeepSeekStatus, resolveBalance } from "../src/status"
 

@@ -2,8 +2,8 @@
  * Unit tests for api.ts
  */
 
-import { afterEach, beforeEach, describe, expect, it, mock } from "bun:test"
 import { UsageError } from "@alexanderfortin/pi-usage-lib"
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest"
 import { type DeepSeekBalanceResponse, getDeepSeekBalance } from "../src/api"
 
 describe("getDeepSeekBalance", () => {
@@ -17,7 +17,7 @@ describe("getDeepSeekBalance", () => {
     }
 
     // Mock global fetch
-    mockFetch = mock(() =>
+    mockFetch = vi.fn(() =>
       Promise.resolve({
         ok: true,
         json: async () => ({
@@ -38,7 +38,7 @@ describe("getDeepSeekBalance", () => {
   })
 
   afterEach(() => {
-    mockFetch.mockRestore()
+    vi.restoreAllMocks()
   })
 
   it("should throw UsageError with code http401 when API returns 401", async () => {

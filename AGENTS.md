@@ -9,12 +9,12 @@ This file contains important rules and guidelines for AI agents working on this 
 Before considering any change complete, **you MUST** run both of the following commands:
 
 ```bash
-bun run test
-bun run check
+pnpm run test
+pnpm run check
 ```
 
-- `bun run test`: Runs all unit tests to ensure functionality is not broken
-- `bun run check`: Runs both `bun run typecheck` (TypeScript type checking) and `bun run lint` (ESLint)
+- `pnpm run test`: Runs all unit tests to ensure functionality is not broken
+- `pnpm run check`: Runs both `pnpm run typecheck` (TypeScript type checking) and `pnpm run lint` (Biome)
 
 **Both commands must pass with zero failures and zero errors before a change can be considered complete.**
 

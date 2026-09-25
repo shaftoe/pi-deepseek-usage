@@ -28,8 +28,8 @@ or test from source:
 git clone https://github.com/shaftoe/pi-deepseek-usage
 cd pi-deepseek-usage
 
-bun install
-bun run build
+pnpm install
+pnpm run build
 pi -e .
 ```
 
@@ -64,16 +64,16 @@ The extension uses the DeepSeek balance endpoint: `GET https://api.deepseek.com/
 
 ```bash
 # Run tests
-bun run test
+pnpm run test
 
 # Type check + lint
-bun run check
+pnpm run check
 
 # Auto-fix lint issues
-bun run lint:fix
+pnpm run lint:fix
 
 # Watch mode
-bun run dev
+pnpm run dev
 ```
 
 ## License
