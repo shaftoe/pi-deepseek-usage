@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-09-25
+
+### Added
+
+- replace Bun with PNPM
+
 ## [0.3.28] - 2026-09-24
 
 ### Changed
@@ -259,6 +265,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - bump release
 
+[0.4.0]: https://github.com/shaftoe/pi-deepseek-usage/compare/v0.3.28...v0.4.0
 [0.3.28]: https://github.com/shaftoe/pi-deepseek-usage/compare/v0.3.27...v0.3.28
 [0.3.27]: https://github.com/shaftoe/pi-deepseek-usage/compare/v0.3.26...v0.3.27
 [0.3.26]: https://github.com/shaftoe/pi-deepseek-usage/compare/v0.3.25...v0.3.26
