@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@alexanderfortin/semantic-release-keep-a-changelog": "^0.4.14",
-    "@biomejs/biome": "^2.5.14",
+    "@biomejs/biome": "^2.5.15",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/exec": "^7.1.0",
     "@semantic-release/git": "^11.0.1",
@@ -45,7 +45,7 @@
     "@semantic-release/npm": "^13.2.0",
     "@vitest/coverage-v8": "^3.2.4",
     "semantic-release": "^25.0.9",
-    "tsx": "^4.20.6",
+    "tsx": "^4.23.15",
     "typescript": "^7.0.2",
     "vitest": "^3.2.4"
   },
