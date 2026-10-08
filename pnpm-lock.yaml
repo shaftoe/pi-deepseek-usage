@@ -46,7 +46,7 @@ importers:
         specifier: ^13.2.0
         version: 13.2.0(semantic-release@25.0.9(typescript@7.0.2))
       '@vitest/coverage-v8':
-        specifier: ^3.2.4
+        specifier: ^3.2.7
         version: 3.2.7(vitest@3.2.7(@types/node@26.6.2)(jiti@2.7.0)(tsx@4.23.15)(yaml@2.9.0))
       semantic-release:
         specifier: ^25.0.9
@@ -58,7 +58,7 @@ importers:
         specifier: ^7.0.2
         version: 7.0.2
       vitest:
-        specifier: ^3.2.4
+        specifier: ^3.2.7
         version: 3.2.7(@types/node@26.6.2)(jiti@2.7.0)(tsx@4.23.15)(yaml@2.9.0)
 
 packages:
