@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@alexanderfortin/pi-usage-lib':
-        specifier: ^0.2.13
-        version: 0.2.13(@earendil-works/pi-coding-agent@0.87.1(ws@8.21.3))(@earendil-works/pi-tui@0.87.1)
+        specifier: ^0.3.1
+        version: 0.3.1(@earendil-works/pi-coding-agent@0.87.1(ws@8.21.3))(@earendil-works/pi-tui@0.87.1)
       '@earendil-works/pi-coding-agent':
         specifier: ^0.87.1
         version: 0.87.1(ws@8.21.3)
@@ -75,8 +75,9 @@ packages:
   '@actions/io@3.0.2':
     resolution: {integrity: sha512-nRBchcMM+QK1pdjO7/idu86rbJI5YHUKCvKs0KxnSYbVe3F51UfGxuZX4Qy/fWlp6l7gWFwIkrOzN+oUK03kfw==}
 
-  '@alexanderfortin/pi-usage-lib@0.2.13':
-    resolution: {integrity: sha512-0Fd2332IJaIltuEMdHMiT0y/or5xVbxcLCPHsu6TZ6ZhDJjFtaItFCN3pLlV7rohN4uiuh9+psZLQyw8zpoW1g==}
+  '@alexanderfortin/pi-usage-lib@0.3.1':
+    resolution: {integrity: sha512-DCieYswdWF/WN6nXj+kLZCj3PSmK4qh/G0XeQwiXQanU5fU6XGpRq51HM69DbpdMVKUMmT1KNTw3ob1OLa5uug==}
+    engines: {node: '>=24'}
     peerDependencies:
       '@earendil-works/pi-coding-agent': ^0.87.1
       '@earendil-works/pi-tui': ^0.87.1
@@ -2573,7 +2574,7 @@ snapshots:
 
   '@actions/io@3.0.2': {}
 
-  '@alexanderfortin/pi-usage-lib@0.2.13(@earendil-works/pi-coding-agent@0.87.1(ws@8.21.3))(@earendil-works/pi-tui@0.87.1)':
+  '@alexanderfortin/pi-usage-lib@0.3.1(@earendil-works/pi-coding-agent@0.87.1(ws@8.21.3))(@earendil-works/pi-tui@0.87.1)':
     dependencies:
       '@earendil-works/pi-coding-agent': 0.87.1(ws@8.21.3)
       '@earendil-works/pi-tui': 0.87.1
