@@ -32,7 +32,9 @@
   "packageManager": "pnpm@10.18.3",
   "pnpm": {
     "onlyBuiltDependencies": [
-      "esbuild"
+      "@google/genai",
+      "esbuild",
+      "protobufjs"
     ]
   },
   "devDependencies": {
