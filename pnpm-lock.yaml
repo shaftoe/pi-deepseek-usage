@@ -179,8 +179,8 @@ importers:
         specifier: ^0.34.52
         version: 0.34.52
       temporal-polyfill:
-        specifier: ^1.0.5
-        version: 1.0.5
+        specifier: ^1.0.6
+        version: 1.0.6
     devDependencies:
       '@alexanderfortin/semantic-release-keep-a-changelog':
         specifier: ^0.5.1
@@ -2333,8 +2333,8 @@ packages:
     resolution: {integrity: sha512-nHc6S/bwIilKHNRgK/3jlhDoIHcp45YgyiwcAk46Tr0LfEqGBVpmiAyuiuxeVE44m3mXnEeVhaipLOEWmH+Njw==}
     engines: {node: '>=14.16'}
 
-  temporal-polyfill@1.0.5:
-    resolution: {integrity: sha512-+H/mmY74i6wXCMcjIhGuSnODcyZnc4eois2myhOyX0UqRAKNXQY5m9iB1en5jQ/n4SXtjLXo1ElBI5bmn8tZwQ==}
+  temporal-polyfill@1.0.6:
+    resolution: {integrity: sha512-tYyEry1HLGUDbm2356W3iYD0OZdo7rlP7h98Zr/EnjqLZQwTAfcBDUvJnJbfA15v/vQad57hJZScG5O0W2oKEA==}
 
   temporal-spec@1.0.1:
     resolution: {integrity: sha512-wxVoanmDeavXie1vu2JaQ3WIc3JZnWAOYFBsJyATaVsXsycKYUflGsyBmrRSnoCpZJpwPyr38VpgSUlQ8CbFxg==}
@@ -2668,7 +2668,7 @@ snapshots:
     dependencies:
       '@earendil-works/pi-coding-agent': 0.87.1(supports-color@7.2.0)(ws@8.22.0)
       '@earendil-works/pi-tui': 0.87.1
-      temporal-polyfill: 1.0.5
+      temporal-polyfill: 1.0.6
 
   '@alexanderfortin/semantic-release-keep-a-changelog@0.5.1(semantic-release@25.0.9(supports-color@7.2.0)(typescript@7.0.2))':
     dependencies:
@@ -2679,7 +2679,7 @@ snapshots:
       get-stream: 9.0.1
       into-stream: 9.1.0
       semantic-release: 25.0.9(supports-color@7.2.0)(typescript@7.0.2)
-      temporal-polyfill: 1.0.5
+      temporal-polyfill: 1.0.6
 
   '@anthropic-ai/sdk@0.124.0':
     dependencies:
@@ -4673,7 +4673,7 @@ snapshots:
 
   temp-dir@3.0.0: {}
 
-  temporal-polyfill@1.0.5:
+  temporal-polyfill@1.0.6:
     dependencies:
       temporal-spec: 1.0.1
       temporal-utils: 1.0.3
