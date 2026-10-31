@@ -167,8 +167,8 @@ importers:
   .:
     dependencies:
       '@alexanderfortin/pi-usage-lib':
-        specifier: ^0.2.13
-        version: 0.2.13(@earendil-works/pi-coding-agent@0.87.1(supports-color@7.2.0)(ws@8.22.0))(@earendil-works/pi-tui@0.87.1)
+        specifier: ^0.3.4
+        version: 0.3.4(@earendil-works/pi-coding-agent@0.87.1(supports-color@7.2.0)(ws@8.22.0))(@earendil-works/pi-tui@0.87.1)
       '@earendil-works/pi-coding-agent':
         specifier: ^0.87.1
         version: 0.87.1(supports-color@7.2.0)(ws@8.22.0)
@@ -233,11 +233,12 @@ packages:
   '@actions/io@3.0.2':
     resolution: {integrity: sha512-nRBchcMM+QK1pdjO7/idu86rbJI5YHUKCvKs0KxnSYbVe3F51UfGxuZX4Qy/fWlp6l7gWFwIkrOzN+oUK03kfw==}
 
-  '@alexanderfortin/pi-usage-lib@0.2.13':
-    resolution: {integrity: sha512-0Fd2332IJaIltuEMdHMiT0y/or5xVbxcLCPHsu6TZ6ZhDJjFtaItFCN3pLlV7rohN4uiuh9+psZLQyw8zpoW1g==}
+  '@alexanderfortin/pi-usage-lib@0.3.4':
+    resolution: {integrity: sha512-o0oJBbm6Wqo6IA1OreYO5Esi+4YAixmZgXq5y262xA6gAcMWdUds8TIfY+nXoSstAybAbgrdsEnZBZ46dB6ZNg==}
+    engines: {node: '>=26.13.0'}
     peerDependencies:
-      '@earendil-works/pi-coding-agent': ^0.87.1
-      '@earendil-works/pi-tui': ^0.87.1
+      '@earendil-works/pi-coding-agent': ^1.2.0
+      '@earendil-works/pi-tui': ^1.2.0
 
   '@alexanderfortin/semantic-release-keep-a-changelog@0.5.1':
     resolution: {integrity: sha512-Ij0xzVQJA62I03GSolyDj5MTTsAKbdCUlVZf3cVghXS4O49TaRr8HobsbC/4Ax6lq0zRCckmW5fPiOtPf7JBUA==}
@@ -2336,6 +2337,9 @@ packages:
   temporal-polyfill@1.0.5:
     resolution: {integrity: sha512-+H/mmY74i6wXCMcjIhGuSnODcyZnc4eois2myhOyX0UqRAKNXQY5m9iB1en5jQ/n4SXtjLXo1ElBI5bmn8tZwQ==}
 
+  temporal-polyfill@1.0.6:
+    resolution: {integrity: sha512-tYyEry1HLGUDbm2356W3iYD0OZdo7rlP7h98Zr/EnjqLZQwTAfcBDUvJnJbfA15v/vQad57hJZScG5O0W2oKEA==}
+
   temporal-spec@1.0.1:
     resolution: {integrity: sha512-wxVoanmDeavXie1vu2JaQ3WIc3JZnWAOYFBsJyATaVsXsycKYUflGsyBmrRSnoCpZJpwPyr38VpgSUlQ8CbFxg==}
 
@@ -2664,11 +2668,11 @@ snapshots:
 
   '@actions/io@3.0.2': {}
 
-  '@alexanderfortin/pi-usage-lib@0.2.13(@earendil-works/pi-coding-agent@0.87.1(supports-color@7.2.0)(ws@8.22.0))(@earendil-works/pi-tui@0.87.1)':
+  '@alexanderfortin/pi-usage-lib@0.3.4(@earendil-works/pi-coding-agent@0.87.1(supports-color@7.2.0)(ws@8.22.0))(@earendil-works/pi-tui@0.87.1)':
     dependencies:
       '@earendil-works/pi-coding-agent': 0.87.1(supports-color@7.2.0)(ws@8.22.0)
       '@earendil-works/pi-tui': 0.87.1
-      temporal-polyfill: 1.0.5
+      temporal-polyfill: 1.0.6
 
   '@alexanderfortin/semantic-release-keep-a-changelog@0.5.1(semantic-release@25.0.9(supports-color@7.2.0)(typescript@7.0.2))':
     dependencies:
@@ -4674,6 +4678,11 @@ snapshots:
   temp-dir@3.0.0: {}
 
   temporal-polyfill@1.0.5:
+    dependencies:
+      temporal-spec: 1.0.1
+      temporal-utils: 1.0.3
+
+  temporal-polyfill@1.0.6:
     dependencies:
       temporal-spec: 1.0.1
       temporal-utils: 1.0.3
