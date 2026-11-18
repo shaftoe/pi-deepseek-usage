@@ -183,8 +183,8 @@ importers:
         version: 1.0.5
     devDependencies:
       '@alexanderfortin/semantic-release-keep-a-changelog':
-        specifier: ^0.5.1
-        version: 0.5.1(semantic-release@25.0.9(supports-color@7.2.0)(typescript@7.0.2))
+        specifier: ^0.6.3
+        version: 0.6.3(semantic-release@25.0.9(supports-color@7.2.0)(typescript@7.0.2))
       '@biomejs/biome':
         specifier: ^2.5.15
         version: 2.5.15
@@ -239,11 +239,11 @@ packages:
       '@earendil-works/pi-coding-agent': ^0.87.1
       '@earendil-works/pi-tui': ^0.87.1
 
-  '@alexanderfortin/semantic-release-keep-a-changelog@0.5.1':
-    resolution: {integrity: sha512-Ij0xzVQJA62I03GSolyDj5MTTsAKbdCUlVZf3cVghXS4O49TaRr8HobsbC/4Ax6lq0zRCckmW5fPiOtPf7JBUA==}
-    engines: {pnpm: '>=12.11.2'}
+  '@alexanderfortin/semantic-release-keep-a-changelog@0.6.3':
+    resolution: {integrity: sha512-Q+Fbs8sOvaWpNZzFzfKTJyH/kXNhIofZbTmGLu4VLAck2Ztry2+4LB8lizO+tbwmW5GEuaRTItXr94zOYP1zuA==}
+    engines: {pnpm: '>=12.18.0'}
     peerDependencies:
-      semantic-release: '>=24.2.9'
+      semantic-release: '>=25.0.9'
 
   '@anthropic-ai/sdk@0.124.0':
     resolution: {integrity: sha512-cN5O8i9UVxHeOQAzj/XjshWXG8KiibJDw9OGpH2Z/eR3n/RBxdoLxDJOcfqAJWvjaMDFfHTBADU04hWRJVkDyA==}
@@ -1280,8 +1280,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  conventional-commits-parser@7.1.3:
-    resolution: {integrity: sha512-Q9oWm1o9uy/oEsZQIraoFMZ4RuPD+79KgwWj6mJVP356tazolCB0piRLZ5Kz9te9p027uSEcUW+Gu44Eh+X79g==}
+  conventional-commits-parser@7.1.4:
+    resolution: {integrity: sha512-TW3PZHi6hwF4cyu7KKc4kNqD1cgg8AkkK5ge9+zsEfpjaSXOeeIQyNWBr7kx5hR2wFuKVmr0be37RzcpmACQIA==}
     engines: {node: '>=22'}
     hasBin: true
 
@@ -2336,11 +2336,17 @@ packages:
   temporal-polyfill@1.0.5:
     resolution: {integrity: sha512-+H/mmY74i6wXCMcjIhGuSnODcyZnc4eois2myhOyX0UqRAKNXQY5m9iB1en5jQ/n4SXtjLXo1ElBI5bmn8tZwQ==}
 
+  temporal-polyfill@1.0.8:
+    resolution: {integrity: sha512-RCCGa0GddT099XG49ijdD0tDf86L8vfuZun1+JyJiO4Y2NP9PACQsG0OnvNPXwVLisdvhr/zqL2nhKQmXXx08A==}
+
   temporal-spec@1.0.1:
     resolution: {integrity: sha512-wxVoanmDeavXie1vu2JaQ3WIc3JZnWAOYFBsJyATaVsXsycKYUflGsyBmrRSnoCpZJpwPyr38VpgSUlQ8CbFxg==}
 
   temporal-utils@1.0.3:
     resolution: {integrity: sha512-9jbTSX3HvkOWvDpNpFzwX/d1mkCrgQgwLmVTOEiuocZGKHsrQJtttGZFmybJ2zYP5zCSZuU5ZyeS8+eOEPABiQ==}
+
+  temporal-utils@1.0.4:
+    resolution: {integrity: sha512-4mAcgbWlaxe+gn23gk8g0iHxCVGVOhKzSCfF5HM3lfvH8BdT+/pBmH/R/E4CrIse+koUgs8ThkPzCLnui6Fi8w==}
 
   tempy@3.2.0:
     resolution: {integrity: sha512-d79HhZya5Djd7am0q+W4RTsSU+D/aJzM+4Y4AGJGuGlgM2L6sx5ZvOYTmZjqPhrDrV6xJTtRSm1JCLj6V6LHLQ==}
@@ -2670,16 +2676,16 @@ snapshots:
       '@earendil-works/pi-tui': 0.87.1
       temporal-polyfill: 1.0.5
 
-  '@alexanderfortin/semantic-release-keep-a-changelog@0.5.1(semantic-release@25.0.9(supports-color@7.2.0)(typescript@7.0.2))':
+  '@alexanderfortin/semantic-release-keep-a-changelog@0.6.3(semantic-release@25.0.9(supports-color@7.2.0)(typescript@7.0.2))':
     dependencies:
       '@semantic-release/error': 4.0.0
       conventional-changelog-writer: 9.3.0
       conventional-commits-filter: 6.0.1
-      conventional-commits-parser: 7.1.3
+      conventional-commits-parser: 7.1.4
       get-stream: 9.0.1
       into-stream: 9.1.0
       semantic-release: 25.0.9(supports-color@7.2.0)(typescript@7.0.2)
-      temporal-polyfill: 1.0.5
+      temporal-polyfill: 1.0.8
 
   '@anthropic-ai/sdk@0.124.0':
     dependencies:
@@ -3689,7 +3695,7 @@ snapshots:
       '@simple-libs/stream-utils': 1.2.0
       meow: 13.2.0
 
-  conventional-commits-parser@7.1.3:
+  conventional-commits-parser@7.1.4:
     dependencies:
       '@simple-libs/stream-utils': 2.0.0
       argue-cli: 3.2.0
@@ -4678,9 +4684,16 @@ snapshots:
       temporal-spec: 1.0.1
       temporal-utils: 1.0.3
 
+  temporal-polyfill@1.0.8:
+    dependencies:
+      temporal-spec: 1.0.1
+      temporal-utils: 1.0.4
+
   temporal-spec@1.0.1: {}
 
   temporal-utils@1.0.3: {}
+
+  temporal-utils@1.0.4: {}
 
   tempy@3.2.0:
     dependencies:
